@@ -12,7 +12,7 @@ pipeline {
         // peut être http ou https
         NEXUS_PROTOCOL = "http"
         //Où est exécuté votre Nexus
-        NEXUS_URL = "192.168.1.146:8081"
+        NEXUS_URL = "192.168.1.131:8081"
         // Dépôt où nous téléchargerons l'artefact
         NEXUS_REPOSITORY = "untilied1"
         // Identifiant d'identification Jenkins pour s'authentifier auprès de Nexus OSS
@@ -37,7 +37,7 @@ pipeline {
          stage('Analyse SonarQube') {
             steps {
                 script {
-                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=untilied -Dsonar.projectName='untilied' -Dsonar.host.url=http://192.168.1.146:9000 -Dsonar.token=sqp_5408f76c6604eb0643bf7de01e5e8054b12ae1f7"
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=untilied -Dsonar.projectName='untilied' -Dsonar.host.url=http://192.168.1.131:9000 -Dsonar.token=sqp_5408f76c6604eb0643bf7de01e5e8054b12ae1f7"
                 }
             }
         }
